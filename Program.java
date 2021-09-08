@@ -122,11 +122,11 @@ public class Program {
         Dog[] dogs = new Dog[r];
         for (int i = 0; i < r; i++) {
             dogs[i] = new Dog();
-            System.out.println("\nenter the age of the " + i + " " + "dog\n");
+            System.out.println("\nenter the age of the " + (i + 1) + " " + "dog\n");
             buff = scanner.nextLine();
             count = Integer.parseInt(buff);
             dogs[i].SetAge(count);
-            System.out.println("\nenter the name of the " + i + " " + "dog\n");
+            System.out.println("\nenter the name of the " + (i + 1) + " " + "dog\n");
             nam = scanner.nextLine();
             dogs[i].SetName(nam);
         }
