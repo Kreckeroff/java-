@@ -5,6 +5,6 @@ class Book {
 
     public void info(){
         System.out.println("В книге " + name + " находиться " + pages + " страниц. ");
-        System.out.print("Написал эту книгу " + Autor);
+        System.out.println("Написал эту книгу " + Autor +"\n");
     }
 }

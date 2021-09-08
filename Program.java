@@ -29,7 +29,7 @@ public class Program {
             // System.out.println(array[count1]);
             count++;
         }
-        System.out.println("result = " + result + "\n");
+        System.out.println("\nсумма 5 чисел = " + result + "\n");
     }
 
     static void task2() {
@@ -41,7 +41,7 @@ public class Program {
             result = result + buff;
             System.out.println(i + ".   " + 1. / i);
         }
-        System.out.println("sum = " + result);
+        System.out.println("\nsum = " + result + "\n");
 
     }
 
@@ -53,7 +53,7 @@ public class Program {
         int buff;
         int[] array = new int[i];
         boolean isSorted = false;
-        System.out.println("\n\ntask number 3\n");
+        System.out.println("\ntask number 3\n");
         while (count < i) {
             array[count] = a + (int) (Math.random() * b);//random numbers
             count++;
@@ -83,20 +83,21 @@ public class Program {
             System.out.println(array[count]);
             count++;
         }
+        System.out.println("\n");
     }
 
     static void task4() {
         int count;
-        System.out.println("in this task I can calculate the factorial of a number\n" +
+        System.out.println("\nin this task I can calculate the factorial of a number\n" +
                 "enter a number from 1 to 10 and I will count it for you\n");
         Scanner scanner = new Scanner(System.in);//запись из консоли
         String a = scanner.nextLine();
         count = Integer.parseInt(a);
-        System.out.println("factorial of number = " + count + " will be " + fact(count));
+        System.out.println("\nfactorial of number = " + count + " will be " + fact(count) +"\n");
     }
 
     static void task5() {
-        System.out.println("\n\ntask number 5\n");
+        System.out.println("\ntask number 5\n");
         Book book;
         book = new Book();
         book.name = "Vasya's story";
@@ -106,25 +107,30 @@ public class Program {
     }
 
     static void task6() {
-        int q = 0;
-        int r = 3;
+        Scanner scanner = new Scanner(System.in);
+        int q;
+        int r;
         int count;
         String nam;
-        String a;
+        String buff;
         String db;
-        Dog[] dogs = new Dog[3];
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("\n\ntask number 6\n");
-        for (int i = 0; i < 3; i++) {
+
+        System.out.println("\ntask number 6\n");
+        System.out.println("\nВведите количесво собак:\n");
+        buff = scanner.nextLine();
+        r = Integer.parseInt(buff);
+        Dog[] dogs = new Dog[r];
+        for (int i = 0; i < r; i++) {
             dogs[i] = new Dog();
-            System.out.println("\nenter the age of the dog\n");
-            a = scanner.nextLine();
-            count = Integer.parseInt(a);
+            System.out.println("\nenter the age of the " + i + " " + "dog\n");
+            buff = scanner.nextLine();
+            count = Integer.parseInt(buff);
             dogs[i].SetAge(count);
-            System.out.println("\nenter the name of the dog\n");
+            System.out.println("\nenter the name of the " + i + " " + "dog\n");
             nam = scanner.nextLine();
             dogs[i].SetName(nam);
         }
+        q = 0;
         while (q < r) {
             db = dogs[q].toString();
             System.out.println("\n");
@@ -147,29 +153,32 @@ public class Program {
             System.out.println("№6 - задание №6 \n");
             System.out.println("№7 - выход из программы \n");
             String ridder = scanner.nextLine();
-            count = Integer.parseInt(ridder);
-            switch (count) {
-                case (1):
+            switch (ridder) {
+                case ("1"):
                     task1();
                     break;
-                case (2):
+                case ("2"):
                     task2();
                     break;
-                case (3):
+                case ("3"):
                     task3();
                     break;
-                case (4):
+                case ("4"):
                     task4();
                     break;
-                case (5):
+                case ("5"):
                     task5();
                     break;
-                case (6):
+                case ("6"):
                     task6();
                     break;
-                case (7):
+                case ("7"):
                     bool = false;
                     break;
+                default: {
+                    System.out.println("неверный ввод! \nПопробуйте еще раз.\n");
+                    break;
+                }
             }
         } while (bool);
     }
