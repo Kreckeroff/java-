@@ -1,14 +1,15 @@
 import javax.xml.namespace.QName;
 import java.util.Scanner;
 public class Program {
-    static int fact(int n){
+    static int fact(int n) {
         int result4 = 1;
-        for(int i5 = 1; i5 <= n; i5++){
-            result4 = result4*i5;
+        for (int i5 = 1; i5 <= n; i5++) {
+            result4 = result4 * i5;
         }
         return result4;
     }
-    static void task1(){
+
+    static void task1() {
         int i = 5;
         int result = 0;
         int count = 0;
@@ -30,19 +31,21 @@ public class Program {
         }
         System.out.println("result = " + result + "\n");
     }
-    static void task2(){
+
+    static void task2() {
         double result = 0f;
         double buff;
         System.out.println("this is the second task, I will show the first 10 numbers of the harmonic series and their sum\n");
         for (int i = 1; i < 11; i++) {
-            buff =  1d / i;
+            buff = 1d / i;
             result = result + buff;
             System.out.println(i + ".   " + 1. / i);
         }
         System.out.println("sum = " + result);
 
     }
-    static void task3(){
+
+    static void task3() {
         int i = 5;
         int count = 0;
         int a = 0;
@@ -61,10 +64,10 @@ public class Program {
             System.out.println(array[count]);
             count++;
         }
-        while(!isSorted) {
+        while (!isSorted) {
             isSorted = true;
-            for (int k = 0; k < array.length-1; k++) {
-                if(array[k] > array[k+1]){
+            for (int k = 0; k < array.length - 1; k++) {
+                if (array[k] > array[k + 1]) {
                     isSorted = false;
 
                     buff = array[k];
@@ -81,7 +84,8 @@ public class Program {
             count++;
         }
     }
-    static void task4(){
+
+    static void task4() {
         int count;
         System.out.println("in this task I can calculate the factorial of a number\n" +
                 "enter a number from 1 to 10 and I will count it for you\n");
@@ -90,7 +94,8 @@ public class Program {
         count = Integer.parseInt(a);
         System.out.println("factorial of number = " + count + " will be " + fact(count));
     }
-    static void task5(){
+
+    static void task5() {
         System.out.println("\n\ntask number 5\n");
         Book book;
         book = new Book();
@@ -99,7 +104,8 @@ public class Program {
         book.Autor = "Ivan";
         book.info();
     }
-    static void task6(){
+
+    static void task6() {
         int q = 0;
         int r = 3;
         int count;
@@ -109,8 +115,8 @@ public class Program {
         Dog[] dogs = new Dog[3];
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n\ntask number 6\n");
-        for(int i = 0 ; i < 3 ; i++) {
-            dogs[i]= new Dog();
+        for (int i = 0; i < 3; i++) {
+            dogs[i] = new Dog();
             System.out.println("\nenter the age of the dog\n");
             a = scanner.nextLine();
             count = Integer.parseInt(a);
@@ -119,19 +125,52 @@ public class Program {
             nam = scanner.nextLine();
             dogs[i].SetName(nam);
         }
-        while(q < r){
+        while (q < r) {
             db = dogs[q].toString();
             System.out.println("\n");
             System.out.println(db);
             q++;
         }
     }
+
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-        task4();
-        task5();
-        task6();
-        }
+        boolean bool = true;
+        int count;
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.println("Для просмотра заданий введите номер задания (1-6)\n");
+            System.out.println("№1 - задание №1 \n");
+            System.out.println("№2 - задание №2 \n");
+            System.out.println("№3 - задание №3 \n");
+            System.out.println("№4 - задание №4 \n");
+            System.out.println("№5 - задание №5 \n");
+            System.out.println("№6 - задание №6 \n");
+            System.out.println("№7 - выход из программы \n");
+            String ridder = scanner.nextLine();
+            count = Integer.parseInt(ridder);
+            switch (count) {
+                case (1):
+                    task1();
+                    break;
+                case (2):
+                    task2();
+                    break;
+                case (3):
+                    task3();
+                    break;
+                case (4):
+                    task4();
+                    break;
+                case (5):
+                    task5();
+                    break;
+                case (6):
+                    task6();
+                    break;
+                case (7):
+                    bool = false;
+                    break;
+            }
+        } while (bool);
     }
+}
